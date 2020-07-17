@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>Personal Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <!--    googlefont-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--    bootstrap4 js-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    <!--  bootstrap4 css-->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <a class="navbar-brand me" href="#">AJ
+    </a>
+    <button id="tog-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#aboutme">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skill">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Work</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- First Container -->
+<div class="bg-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <br><br>
+                <h1 class="margin" id="name1">Hello, </br>I'm Ashwathi</h1>
+                <h1 id="name2">{{ about.short_desp }}</h1>
+                <a href="#contact" class="button" id="cntbtn">Contact</a>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ about.image.url }}" width="450" height="400">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2" id="aboutme">
+    <h2 class="margin">Who am I</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="mydata">{{ about.desp|linebreaks }}</p>
+        </div>
+    </div>
+    <a href="{% static 'aj.pdf' %}" download class="btn btn-outline-success">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+             width="30" height="30"
+             viewBox="0 0 172 172"
+             style=" fill:#000000;">
+            <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+               stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+               font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <g fill="#5cb85c">
+                    <path d="M85.2475,27.4125c-3.5475,0.38969 -6.20812,3.42656 -6.1275,6.9875v86.3225l-22.6825,-22.4675c-1.30344,-1.31687 -3.09062,-2.05594 -4.945,-2.0425c-2.84875,-0.02687 -5.40187,1.70656 -6.45,4.34031c-1.04812,2.64719 -0.36281,5.65719 1.72,7.59219l34.4,33.97l4.8375,4.8375l4.8375,-4.8375l34.4,-33.97c2.72781,-2.67406 2.78156,-7.05469 0.1075,-9.7825c-2.67406,-2.72781 -7.05469,-2.78156 -9.7825,-0.1075l-22.6825,22.4675v-86.3225c0.02688,-1.86781 -0.69875,-3.655 -2.01562,-4.97187c-1.31688,-1.31688 -3.10406,-2.0425 -4.97188,-2.01563c-0.215,-0.01344 -0.43,-0.01344 -0.645,0z"></path>
+                </g>
+            </g>
+        </svg>
+        Download CV</a>
+</div>
+
+<!-- Third Container (Grid) Skills-->
+<div class="container-fluid bg-3 text-center" id="skill">
+    <h2 class="margin">What am I expertise</h2><br>
+    <div class="row">
+        {% for skl in skill %}
+        <div class="card">
+            <h3 class="title">{{ skl.title }}</h3>
+            <div class="circle">
+                <img src="{{ skl.image.url }}" width="120" height="120">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<!--projects-->
+<div class="container-fluid bg-5 text-center" id="project">
+    <h2 class="margin">My Works</h2>
+        <h3 id="prj">On Process</h3>
+    <div class="row cf">
+        <div class="loader" id="loader-4">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+</div>
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center" id="contact">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p class="foot"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M28.66667,28.66667c-7.91917,0 -14.33333,6.41417 -14.33333,14.33333v12.41569l7.16667,4.49316l7.16667,4.49316l57.33333,35.93132l57.33333,-35.69336l7.16667,-4.46517l7.16667,-4.45117v-12.72363c0,-7.91917 -6.41417,-14.33333 -14.33333,-14.33333zM28.66667,43h114.66667v5.51497l-57.33333,35.67936l-57.33333,-35.93132zM14.33333,72.32455v56.67545c0,7.91917 6.41417,14.33333 14.33333,14.33333h114.66667c7.91917,0 14.33333,-6.41417 14.33333,-14.33333v-56.39551l-14.33333,8.91634v47.47917h-114.66667v-47.68913z"></path></g></g></svg>
+                <a href="mailto:ashwathijayadev@gmail.com">ashwathijayadev@gmail.com</a>
+                <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                             width="32" height="32"
+                             viewBox="0 0 32 32"
+                             style=" fill:#ffffff;"><path
+                                d="M 8 5 C 6.355469 5 5 6.355469 5 8 L 5 24 C 5 25.644531 6.355469 27 8 27 L 24 27 C 25.644531 27 27 25.644531 27 24 L 27 8 C 27 6.355469 25.644531 5 24 5 Z M 21 8 L 24 8 L 24 11 L 21 11 Z M 16 12 C 18.222656 12 20 13.777344 20 16 C 20 18.222656 18.222656 20 16 20 C 13.777344 20 12 18.222656 12 16 C 12 13.777344 13.777344 12 16 12 Z M 7 14 L 10.34375 14 C 10.121094 14.625 10 15.300781 10 16 C 10 19.300781 12.699219 22 16 22 C 19.300781 22 22 19.300781 22 16 C 22 15.300781 21.878906 14.625 21.65625 14 L 25 14 L 25 24 C 25 24.566406 24.566406 25 24 25 L 8 25 C 7.433594 25 7 24.566406 7 24 Z"></path></svg>
+
+                    </span>
+                <a href="https://www.instagram.com/im_ashwathi/">Instagram</a>
+
+                <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                                     width="32" height="32"
+                                     viewBox="0 0 50 50"
+                                     style=" fill:#ffffff;">    <path
+                                        d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path></svg>
+
+                            </span>
+                <a href="https://www.facebook.com/aj.ashwathi">Facebook</a>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="48" height="48"
+viewBox="0 0 172 172"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M78.11667,15.05c-32.96667,3.58333 -59.48333,30.1 -63.06667,62.35c-3.58333,33.68333 15.76667,63.78333 45.15,75.25c2.15,0.71667 4.3,-0.71667 4.3,-3.58333v-11.46667c0,0 -2.86667,0.71667 -6.45,0.71667c-10.03333,0 -14.33333,-8.6 -15.05,-13.61667c-0.71667,-2.86667 -2.15,-5.01667 -4.3,-7.16667c-2.15,-0.71667 -2.86667,-0.71667 -2.86667,-1.43333c0,-1.43333 2.15,-1.43333 2.86667,-1.43333c4.3,0 7.88333,5.01667 9.31667,7.16667c3.58333,5.73333 7.88333,7.16667 10.03333,7.16667c2.86667,0 5.01667,-0.71667 6.45,-1.43333c0.71667,-5.01667 2.86667,-10.03333 7.16667,-12.9c-16.48333,-3.58333 -28.66667,-12.9 -28.66667,-28.66667c0,-7.88333 3.58333,-15.76667 8.6,-21.5c-0.71667,-1.43333 -1.43333,-5.01667 -1.43333,-10.03333c0,-2.86667 0,-7.16667 2.15,-11.46667c0,0 10.03333,0 20.06667,9.31667c3.58333,-1.43333 8.6,-2.15 13.61667,-2.15c5.01667,0 10.03333,0.71667 14.33333,2.15c9.31667,-9.31667 20.06667,-9.31667 20.06667,-9.31667c1.43333,4.3 1.43333,8.6 1.43333,11.46667c0,5.73333 -0.71667,8.6 -1.43333,10.03333c5.01667,5.73333 8.6,12.9 8.6,21.5c0,15.76667 -12.18333,25.08333 -28.66667,28.66667c4.3,3.58333 7.16667,10.03333 7.16667,16.48333v18.63333c0,2.15 2.15,4.3 5.01667,3.58333c26.51667,-10.75 45.15,-36.55 45.15,-66.65c0,-43 -36.55,-76.68333 -79.55,-71.66667z"></path></g></g></svg>
+                <a href="https://github.com/ashwathi08">Github</a>
+            </p>
+            <p>&copy; Ashwathi {% now 'Y' %}</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
